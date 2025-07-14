@@ -3,6 +3,8 @@ name: ESP32 C3
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
 on:
   push:
+    paths-ignore:
+      - ".github/workflows/*.yml"
   pull_request:
     paths-ignore:
       - "examples/**"

@@ -2,8 +2,7 @@ name: ESP32 C3 test
 
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
 on:
-  push:
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   tensorflow_micropython_esp32_c3_build:

@@ -8,8 +8,7 @@ on:
       - 'examples/**'
       - 'README.md'
       - 'ci/*unix*.sh'
-      - '.github/workflows/build_unix.yml'
-      - '.github/workflows/build_esp32.yml'
+      - '.github/workflows/*.yml'
   pull_request:
     paths-ignore:
       - 'examples/**'
