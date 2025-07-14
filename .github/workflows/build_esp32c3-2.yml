@@ -58,7 +58,7 @@ jobs:
 
           source ./esp-idf/export.sh
 
-          pip3 install wheel
+          pip3 install wheel ConfigParser
           pip3 install Pillow
           pip3 install Wave
 
