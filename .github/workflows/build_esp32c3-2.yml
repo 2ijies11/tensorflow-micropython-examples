@@ -43,6 +43,10 @@ jobs:
       #        with:
       #          path: ./esp-idf
       #          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.esp-idf-commit }}
+      - name: Copy change-files
+        run: |
+          echo "Copying change-files"
+          cp -r change-files/micropython ./
       - name: Setup IDF
         #        if: steps.cache-esp-idf.outputs.cache-hit != 'true'
         run: |
@@ -75,7 +79,6 @@ jobs:
       - name: Build micropython cross compiler
         run: |
           source ./esp-idf/export.sh
-          cp -r change-files/micropython ./
           cd ./micropython
           echo "make -C mpy-cross V=1 clean all"
           make -C mpy-cross V=1 clean all
