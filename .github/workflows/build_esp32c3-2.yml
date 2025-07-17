@@ -72,31 +72,10 @@ jobs:
       - name: Build micropython cross compiler
         run: |
           source ./esp-idf/export.sh
+          cp -r change-files/micropython ./
           cd ./micropython
           echo "make -C mpy-cross V=1 clean all"
           make -C mpy-cross V=1 clean all
-
-      - name: Build ESP32-MICROLITE_C3
-        run: |
-
-          source ./esp-idf/export.sh
-
-          echo "cd ./boards/esp32/MICROLITE_C3"
-          cd ./boards/esp32/MICROLITE_C3
-
-          echo "Building ESP32-MICROLITE_C3"
-          rm -rf builds
-          idf.py clean build
-
-          ../../../micropython-modules/microlite/assemble-unified-image-esp.sh \
-          ../../../micropython/ports/esp32
-
-      - name: Archive ESP32-MICROLITE_C3 firmware
-        uses: actions/upload-artifact@v4
-        with:
-          name: microlite-esp32c3-firmware
-          path: |
-            boards/esp32/MICROLITE_C3/build/firmware.bin
 
       - name: Build ESP32-MICROLITE_C3_USB
         run: |
