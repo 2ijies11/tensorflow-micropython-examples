@@ -215,7 +215,7 @@ STATIC mp_obj_t esp_phy_mode(size_t n_args, const mp_obj_t *args) {
 STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(esp_phy_mode_obj, 0, 1, esp_phy_mode);
 
 #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(4, 4, 7)
-#define TEST_WIFI_AUTH_MAX 11
+#define TEST_WIFI_AUTH_MAX 10
 #elif ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(4, 3, 0)
 #define TEST_WIFI_AUTH_MAX 9
 #else
