@@ -1,0 +1,10 @@
+services:
+  mp:
+    image: espressif/idf:v4.4.8
+    # build:
+    #   context: .
+    tty: true
+    init: true
+    volumes:
+      # - ./esp-idf:/work/esp-idf
+      - ./tensorflow-micropython-examples:/work/tensorflow
