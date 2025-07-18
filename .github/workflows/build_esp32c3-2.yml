@@ -7,7 +7,9 @@ on:
 jobs:
   tensorflow_micropython_esp32_c3_build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        idf-version: [4.4.1, 4.4.2, 4.4.3, 4.4.4, 4.4.5, 4.4.6, 4.4.7]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -50,7 +52,7 @@ jobs:
       - name: Setup IDF
         #        if: steps.cache-esp-idf.outputs.cache-hit != 'true'
         run: |
-          source ./micropython/tools/ci.sh && ci_esp32_idf448_setup
+          source ./micropython/tools/ci.sh && ci_esp32_setup_helper ${{ matrix.idf-version }}
       - name: Cache tflm
         id: cache-tflm
         uses: actions/cache@v4
@@ -101,6 +103,6 @@ jobs:
       - name: Archive ESP32-MICROLITE_C3_USB firmware
         uses: actions/upload-artifact@v4
         with:
-          name: microlite-esp32c3-usb-firmware
+          name: microlite-esp32c3-usb-firmware-${{ matrix.idf-version }}
           path: |
             boards/esp32/MICROLITE_C3_USB/build/firmware.bin
