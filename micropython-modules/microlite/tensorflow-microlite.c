@@ -217,7 +217,7 @@ MP_DEFINE_CONST_OBJ_TYPE(
     MP_QSTR_tensor,
     MP_TYPE_FLAG_NONE,
     print, tensor_print,
-    locals_dict, &tensor_locals_dict
+    locals_dict, (mp_obj_t)&tensor_locals_dict
     );
 
 // audio_frontend
@@ -268,7 +268,7 @@ MP_DEFINE_CONST_OBJ_TYPE(
     MP_TYPE_FLAG_NONE,
     make_new, af_make_new,
     print, af_print,
-    locals_dict, &audio_frontend_locals_dict
+    locals_dict, (mp_obj_t)&audio_frontend_locals_dict
     );
 
 // - microlite interpreter
@@ -419,7 +419,7 @@ MP_DEFINE_CONST_OBJ_TYPE(
     MP_TYPE_FLAG_NONE,
     print, interpreter_print,
     make_new, interpreter_make_new,
-    locals_dict, &interpreter_locals_dict
+    locals_dict, (mp_obj_t)&interpreter_locals_dict
     );
 
 
