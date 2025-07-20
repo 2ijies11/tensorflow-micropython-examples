@@ -48,7 +48,7 @@ jobs:
       - name: Copy change-files
         run: |
           echo "Copying change-files"
-          cp -r change-files/micropython ./
+          cp -r change-files/* ./
       - name: Setup IDF
         #        if: steps.cache-esp-idf.outputs.cache-hit != 'true'
         run: |
