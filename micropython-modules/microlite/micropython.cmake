@@ -249,7 +249,7 @@ target_sources(microlite INTERFACE
 #   microlite micropython module sources
     ${CMAKE_CURRENT_LIST_DIR}/tensorflow-microlite.c
     ${CMAKE_CURRENT_LIST_DIR}/audio_frontend.c
-    ${CMAKE_CURRENT_LIST_DIR}/openmv-libtf.cpp
+    # ${CMAKE_CURRENT_LIST_DIR}/openmv-libtf.cpp
     ${CMAKE_CURRENT_LIST_DIR}/micropython-error-reporter.cpp
 
     # tf lite sources
@@ -302,15 +302,15 @@ set (MICROLITE_PYTHON_SRCS
     ${CMAKE_CURRENT_LIST_DIR}/micropython-error-reporter.cpp
 )
 
-if (CONFIG_IDF_TARGET)
-    list(APPEND MICROLITE_PYTHON_SRCS
-        ${CMAKE_CURRENT_LIST_DIR}/openmv-libtf-updated.cpp
-    )
-else()
-    list(APPEND MICROLITE_PYTHON_SRCS
-        ${CMAKE_CURRENT_LIST_DIR}/openmv-libtf.cpp
-    )
-endif()
+# if (CONFIG_IDF_TARGET)
+#     list(APPEND MICROLITE_PYTHON_SRCS
+#         ${CMAKE_CURRENT_LIST_DIR}/openmv-libtf-updated.cpp
+#     )
+# else()
+#     list(APPEND MICROLITE_PYTHON_SRCS
+#         ${CMAKE_CURRENT_LIST_DIR}/openmv-libtf.cpp
+#     )
+# endif()
 
 target_sources(microlite INTERFACE
     # micro_python sources for tflite
