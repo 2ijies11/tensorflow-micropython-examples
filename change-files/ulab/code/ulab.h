@@ -90,7 +90,7 @@
 // 2 kB in the two-dimensional case, and around 4 kB in the four-dimensional case.
 
 #ifndef NDARRAY_BINARY_USES_FUN_POINTER
-#define NDARRAY_BINARY_USES_FUN_POINTER     (0)
+#define NDARRAY_BINARY_USES_FUN_POINTER     (1)
 #endif
 
 #ifndef NDARRAY_HAS_BINARY_OP_ADD
