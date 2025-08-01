@@ -34,7 +34,7 @@
 
 #include "tensorflow-microlite.h"
 
-#include "openmv-libtf.h"
+// #include "openmv-libtf.h"
 
 #include "tensorflow/lite/c/common.h"
 
