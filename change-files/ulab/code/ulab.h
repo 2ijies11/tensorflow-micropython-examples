@@ -33,7 +33,7 @@
 
 // Adds support for complex ndarrays
 #ifndef ULAB_SUPPORTS_COMPLEX
-#define ULAB_SUPPORTS_COMPLEX               (1)
+#define ULAB_SUPPORTS_COMPLEX               (0)
 #endif
 
 // Determines, whether scipy is defined in ulab. The sub-modules and functions
